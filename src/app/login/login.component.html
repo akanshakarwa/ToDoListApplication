@@ -1,0 +1,43 @@
+<div class="container">
+  <div class="jumbotron">
+    <h1 style="font-size:2rem;font-family:cursive">Welcome to ToDoApp</h1>
+  </div>
+
+
+  <!-- Default form login -->
+  <form class="text-center border border-light p-5">
+
+    <p class="h4 mb-4">Sign in</p>
+
+    <!-- Email -->
+    <input [(ngModel)]="username" [ngModelOptions]="{standalone: true}" type="text" id="defaultLoginFormEmail" class="form-control mb-4"
+      placeholder="Username">
+
+    <!-- Password -->
+    <input [(ngModel)]="password" [ngModelOptions]="{standalone: true}" type="password" id="defaultLoginFormPassword" class="form-control mb-4"
+      placeholder="Password">
+
+    <div class="d-flex justify-content-around">
+
+      <div>
+        <!-- Forgot password -->
+        <a href="">Forgot password?</a>
+      </div>
+    </div>
+    <div class="alert alert-danger" role="alert" [hidden]="!errorOccured">
+      {{errorMessage}}
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <!-- Sign in button -->
+    <button mdbBtn color="info" block="true" class="my-4" (click)="redirectToDashboard()">Sign in</button>
+
+    <!-- Register -->
+    <p>Not a member?
+      <a href="">Register</a>
+    </p>
+
+
+  </form>
+</div>

@@ -1,0 +1,60 @@
+<div class="container">
+  <div class="jumbotron" style="height:1rem;">
+    <p style="font-size:1.4rem;font-family:cursive">Welcome {{userName}}
+      <button style="float:right" type="submit" mdbBtn (click)="logout()">
+        <i class="fa fa-sign-out"></i>
+      </button>
+    </p>
+  </div>
+
+  <hr />
+  <div>
+    <h1 style="font-size:1rem;font-family:cursive">Add Task</h1>
+    <form class="form-horizontal" role="form">
+      <div class="form-group">
+        <label for="inputItemCategory" class="col-sm-2">Task Description
+        </label>
+        <div class="col-sm-10">
+          <input type="text" class="form-control" [(ngModel)]="newtaskDesc" [ngModelOptions]="{standalone: true}" id="inputItemCategory"
+            placeholder="Enter task summary" />
+        </div>
+      </div>
+      <button type="submit" mdbBtn (click)="addTask()">
+        <i class="fa fa-plus"></i>
+      </button>
+    </form>
+  </div>
+  <hr />
+  <h3 style="font-size:1rem;font-family:cursive">TODO Task List:</h3>
+  <hr />
+  <div>
+    <form class="form-horizontal">
+      <table class="table table-bordered table-striped" id="todoItems">
+        <thead>
+          <tr>
+            <th>Description</th>
+            <th>Created On</th>
+            <th>Status</th>
+            <th>Delete</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let task of tasklist">
+            <td> {{task.taskDescription}}</td>
+            <td>{{task.insertTime}}</td>
+            <td>
+              <input type="checkbox" />
+            </td>
+            <td>
+              <button type="submit" mdbBtn (click)="deleteTask(task.prKey)">
+                <i class="fa fa-trash"></i>
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+    </form>
+  </div>
+  <hr />
+</div>
