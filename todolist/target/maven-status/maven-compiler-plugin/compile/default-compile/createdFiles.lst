@@ -1,0 +1,9 @@
+com\todolist\Application\Repository\LoginRepository.class
+com\todolist\Application\Model\User.class
+com\todolist\Application\Repository\UserTasksRepository.class
+com\todolist\Application\Model\Userdata.class
+com\todolist\Application\TodolistApplication.class
+com\todolist\Application\Service\DeleteFromListService.class
+com\todolist\Application\Service\AddToListService.class
+com\todolist\Application\Service\LoginService.class
+com\todolist\Application\Controller\ToDoListController.class
